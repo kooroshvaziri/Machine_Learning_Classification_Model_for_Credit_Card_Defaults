@@ -8,11 +8,11 @@ The accompanied [Jupyter Notebook](capstone.ipynb) provides the exploratory data
 # Exploratory Data Analysis and Data Cleaning
 This dataset is relatively clean with no missing values and no duplicates. There were originally 30,000 rows and 24 features (excluding ID) in the dataset. Cleaning the data involved following steps:
 
-1- ID column was dropped.
-2- MARRIAGE column according to the legend should have had values between 1 and 3, but there were rows that has 0 in them. These rows were updated to 3 to represent OTHERS category.
-3- EDUCATION column supposed to have values from 1-4, but we see values 0, 5, and 6. These values were all converted to OTHERS or 4.
-4- BILL_AMT1 through BILL_AMT6 columns all had negative values. All rows were dropped who had negative values for any BILL_AMT columns.
-5- LIMIT_BAL column is right-skewed with outliers as seen in below picture, so it was trimmed to balances under $600,000.
+1. ID column was dropped.
+2. MARRIAGE column according to the legend should have had values between 1 and 3, but there were rows that has 0 in them. These rows were updated to 3 to represent OTHERS category.
+3. EDUCATION column supposed to have values from 1-4, but we see values 0, 5, and 6. These values were all converted to OTHERS or 4.
+4. BILL_AMT1 through BILL_AMT6 columns all had negative values. All rows were dropped who had negative values for any BILL_AMT columns.
+5. LIMIT_BAL column is right-skewed with outliers as seen in below picture, so it was trimmed to balances under $600,000.
 
 After clean up, the data has 22299 rows and 24 columns. The data is highly imbalanced with 77.3% non-default and only 22.7% default cases as seen in below image.
 
