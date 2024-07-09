@@ -14,11 +14,10 @@ This dataset is relatively clean with no missing values and no duplicates. There
 4. BILL_AMT1 through BILL_AMT6 columns all had negative values. All rows were dropped who had negative values for any BILL_AMT columns.
 5. LIMIT_BAL column is right-skewed with outliers as seen in below picture, so it was trimmed to balances under $600,000.
 
-After clean up, the data has 22299 rows and 24 columns. The data is highly imbalanced with 77.3% non-default and only 22.7% default cases as seen in below image.
+After clean up, the data has 22299 rows and 24 columns. The data is highly imbalanced with 77.3% non-default and only 22.7% default cases as seen in below image. Since we aim to classify and find default customers, this imbalance data poses some difficulties, and the data needs to be handled with case.
+
 
 ![Balance Distribution and Imbalance Data Labels](images/capstone_00.png)
-
-Since we aim to classify and find default customers, this imbalance data poses some difficulties, and the data needs to be handled with case.
 
 
 
