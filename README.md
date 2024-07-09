@@ -15,7 +15,7 @@ This dataset is relatively clean with no missing values and no duplicates. There
 5. LIMIT_BAL column is right-skewed with outliers as seen in below picture, so it was trimmed to balances under $600,000.
 6. Since all columns are represented with numerical values, and some of just categories, these columns are converted back to categorical columns: SEX, MARRIAGE, and EDUCATION as objects.
 
-After clean up, the data has 22299 rows and 24 columns. The data is highly imbalanced with 77.3% non-default and only 22.7% default cases as seen in below image. Since we aim to classify and find default customers, this imbalance data poses some difficulties, and the data needs to be handled with case.
+After clean up, the data has 22299 rows and 24 columns (originally all numerical and finally 21 numericals and 3 categorical). The data is highly imbalanced with 77.3% non-default and only 22.7% default cases as seen in below image. Since we aim to classify and find default customers, this imbalance data poses some difficulties, and the data needs to be handled with case.
 
 ![Balance Distribution and Imbalance Data Labels](images/capstone_00.png)
 
