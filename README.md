@@ -21,6 +21,16 @@ After clean up, the data has 22299 rows and 24 columns (originally all numerical
 
 The data also shows different scales among columns, and proper scaling techniques needs to be used so there are no issues with the models. For more details about scaling, please view the accompanied Jupyter notebook. Other than scaling, it is northworthy to mention that some of the columns are highly correlated to each other. Columns PAY_0 to PAY6 and BILL_AMT1 to BILL_AMT6 are gradually correlated among each other as seen in the correlation matrix in the notebook.
 
+For encoding categorial columns, ***pd.get_dummies*** is used, and ***StandardScaler*** class is used to scale the other columns. The data has been splitted into training and test sets by a ratio of 70%/30% which is 15609 training rows and 6690 test rows. The ***Dummy Classifier*** returns 78% accuracy on this data so any model has to beat this value to be considered worthy.
+
+# Model Comparisons
+
+During our EDA phase, we managed to create and compare 5 Basic models, 2 improved models, 1 GridSearchCV, 1 ROC, and 2 Ensemble models as seen in table below, but as for reasons to be explained soon, GridSearchCV and EasyEnsumble resulted in best performances.
+
+![Models Result](images/capstone_02.png)
+
+
+
 
 
 
