@@ -40,7 +40,8 @@ The improved models are based on ***Logistic Regression*** Coefficient importanc
 
 We can see that GridSearchCV results in the best SVC model, but it takes a long time to converge. ***Improved SVC*** classifier actually has very good ***Recall*** score and training time there.
 
-
+# Ensemble Techniques
+Two ensemble classifiers are chosen for imbalanced data, ***Easy Ensemble*** and ***Balanced Bagging***. Both have performed nicely on this dataset with good recall score. 
 
 
 
