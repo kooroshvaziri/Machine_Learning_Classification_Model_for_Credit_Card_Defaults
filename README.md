@@ -25,9 +25,16 @@ For encoding categorial columns, ***pd.get_dummies*** is used, and ***StandardSc
 
 # Model Comparisons
 
-During our EDA phase, we managed to create and compare 5 Basic models, 2 improved models, 1 GridSearchCV, 1 ROC, and 2 Ensemble models as seen in table below, but as for reasons to be explained soon, GridSearchCV and EasyEnsumble resulted in best performances.
+During our EDA phase, we managed to create and compare 5 Basic models, 2 improved models, 1 GridSearchCV, 1 ROC, and 2 Ensemble models as seen in table below, but as for reasons to be explained soon, ***GridSearchCV*** and ***Easy Ensumble Classifier*** resulted in best performances.
 
 ![Models Result](images/capstone_02.png)
+
+# Result Analysis
+
+Although all basic models beat the ***Dummy Classifier*** performance, becuase of the imbalance dataset, we can see that ***Accuracy*** is not the right measure to compare their performances. These models all show poor ***Recall*** and ***Precision*** scores, so to compare the best model, we have to use either ***Recall*** or ***F-1*** scores. The reason for this, is that poor recall scores result in large number of false negative cases, meaning a large number of customers who are likely to be defaulted will be classified as not in default that can cause the bank quite amount of money.
+
+# Improved Models
+The improved models are based on ***Logistic Regression*** Coefficient importance or linear correlation and ***Random Forrest*** non-linear correlations. These models are built based on a subset of original features albeit more important. We can see that GridSearchCV results in the best SVC model, but it takes a long time to converge. ***Improved SVC*** classifier actually has very good ***Recall*** score and training time there.
 
 
 
