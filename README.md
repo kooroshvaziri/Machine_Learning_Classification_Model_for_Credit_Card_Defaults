@@ -43,5 +43,15 @@ We can see that GridSearchCV results in the best SVC model, but it takes a long 
 # Ensemble Techniques
 Two ensemble classifiers are chosen for imbalanced data, ***Easy Ensemble*** and ***Balanced Bagging***. Both have performed nicely on this dataset with good recall score. 
 
+# Conclusion
+The dataset is not perfect, so we cannot have 100% accuracy and 100% recall on our classification problem. Because it is imbalanced, there are a number of methods that are common to process the data:
 
+1. Using better scoring measures like F-1
+2. Upsampling the data
+3. Downsample and clustering the data.
+4. A combination of methods
+
+As noted earlier, having a low recall score means some default customers will be classified as normal, and the bank cannot detect them. This can have major implications. Therefore, a balanced Recall and Accuracy is suggested for this problem. Both SVC and Easy Ensemble classifiers results fall in this category. 
+
+Further advice for the customer would be to gather more data and more features. Since based on this dataset, we cannot do much better than this.
 
