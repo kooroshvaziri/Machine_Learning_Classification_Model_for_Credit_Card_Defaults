@@ -16,8 +16,10 @@ This dataset is relatively clean with no missing values and no duplicates. There
 
 After clean up, the data has 22299 rows and 24 columns. The data is highly imbalanced with 77.3% non-default and only 22.7% default cases as seen in below image. Since we aim to classify and find default customers, this imbalance data poses some difficulties, and the data needs to be handled with case.
 
-
 ![Balance Distribution and Imbalance Data Labels](images/capstone_00.png)
+
+The data also shows different scales among columns, and proper scaling techniques needs to be used so there are no issues with the models. For more details about scaling, please view the accompanied Jupyter notebook. Other than scaling, it is northworthy to mention that some of the columns are highly correlated to each other. Columns PAY_0 to PAY6 and BILL_AMT1 to BILL_AMT6 are gradually correlated among each other as seen in the correlation matrix in the notebook.
+
 
 
 
