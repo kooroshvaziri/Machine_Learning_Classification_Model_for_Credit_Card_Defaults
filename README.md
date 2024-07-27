@@ -19,7 +19,7 @@ This dataset is relatively clean with no missing values and no duplicates. There
 ## EDA Insights:
 1. Data is highly imbalanced. We need to use appropriate measures like F1 or Recall instead of Accuracy. Imbalance data needs to be under-sampled or oversampled so models like Logistic Regression do not eliminate the small class. SVC needs to have balance parameter.
 2. There are correlations between features. PAY_0 has increasing correlation gradually up tp PAY_6, as well as BILL_AMT1 up to BILL_AMT6.
-3. LIMIT_BAL column is right-skewed with outliers as seen in below picture, so it was trimmed to balances under $610,000. There was also one anomaly at $327,680 in this column, which did not correspond to any other datapoints spacing at even $10,000 bins. This data point was removed in ***Outliers Removal*** section.
+3. LIMIT_BAL column is right-skewed with outliers as seen in below picture, so it was trimmed to balances under $610,000. There was also one anomaly at $327,680 in this column, which did not correspond to any other datapoints spacing at even $10,000 bins. This datapoint was removed in ***Outliers Removal*** section.
 4. Age distribution is right-skewed, but the mean is similar for each group (outliers greater than 72 were removed).
 
 ![Imbalance Data, Balance and Age Distributions](images/capstone_fin_01.png)
