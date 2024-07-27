@@ -36,7 +36,7 @@ This dataset is relatively clean with no missing values and no duplicates. There
 
 After clean up, the data has 22306 rows and 24 columns (originally all numerical and finally 21 numerical and 3 categorical). The data is highly imbalanced with 77.3% non-default and only 22.7% default cases as seen in below image. Since we aim to classify and find default customers, this imbalance data poses some difficulties, and the data needs to be handled with case.
 
-Other than scaling, it is note worthy to mention that some of the columns are highly correlated to each other. Columns PAY_0 to PAY6 and BILL_AMT1 to BILL_AMT6 are gradually correlated among each other as seen in the correlation matrix in the notebook. For encoding categorial columns, ***pd.get_dummies*** is used, and ***StandardScaler*** class is used to scale the other columns. The data has been split into training and test sets by a ratio of 70%/30% which is 15614 training rows and 6692 test rows. The ***Dummy Classifier*** returns 78% accuracy on this data so any model has to beat this value to be considered worthy.
+Other than scaling, it is note worthy to mention that some of the columns are highly correlated to each other. Columns PAY_0 to PAY6 and BILL_AMT1 to BILL_AMT6 are gradually correlated among each other as seen in the correlation matrix in the notebook. For encoding categorial columns, ***pd.get_dummies*** is used, and ***StandardScaler*** class is used to scale the other columns. The data has been split into training and test sets by a ratio of 70%/30% which is 15614 training rows and 6692 test rows. The ***Dummy Classifier*** returns 77.3% accuracy on this data so any model has to beat this value to be considered worthy.
 
 # Model Comparisons
 
