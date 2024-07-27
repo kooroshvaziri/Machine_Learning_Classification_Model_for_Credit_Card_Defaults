@@ -3,25 +3,40 @@
 The purpose of this project is to detect credit card defaults with machine learning classifiers and build an efficient classifier to identify bank customers who would default next month. It is a binary classifier problem, and the data has taken from ["Default of Credit Card Clients Data Set"](https://code.datasciencedojo.com/datasciencedojo/datasets/tree/master/Default%20of%20Credit%20Card%20Clients) where itself comes from UC Irvine's [UCI Machine Learning Repo](https://archive.ics.uci.edu/dataset/350/default+of+credit+card+clients).
 
 # Jupyter Notebooks
-The accompanied [Jupyter Notebook](capstone.ipynb) provides the exploratory data analysis, calculations, methodologies, and different classifier models performance comparisons.
+The accompanied Jupyter Notebooks provide the exploratory data analysis (EDA), calculations, methodologies, and different classifier models performance comparisons. The first iteration and EDA are within the [EDA Notebook](capstone.ipynb), and the follow up iterations and improvements are [Capstone Notebook](capstone_final.ipynb).
 
 # Exploratory Data Analysis and Data Cleaning
-This dataset is relatively clean with no missing values and no duplicates. There were originally 30,000 rows and 24 features (excluding ID) in the dataset. Cleaning the data involved following steps:
+This dataset is relatively clean with no missing values and no duplicates. There were originally 30,000 rows and 24 features (excluding ID) in the dataset. 
+
+## Data Cleaning Steps:
 
 1. ID column was dropped.
 2. MARRIAGE column according to the legend should have had values between 1 and 3, but there were rows that has 0 in them. These rows were updated to 3 to represent OTHERS category.
 3. EDUCATION column supposed to have values from 1-4, but we see values 0, 5, and 6. These values were all converted to OTHERS or 4.
 4. BILL_AMT1 through BILL_AMT6 columns all had negative values. All rows were dropped who had negative values for any BILL_AMT columns.
-5. LIMIT_BAL column is right-skewed with outliers as seen in below picture, so it was trimmed to balances under $600,000.
-6. Since all columns are represented with numerical values, and some of just categories, these columns are converted back to categorical columns: SEX, MARRIAGE, and EDUCATION as objects.
+5. Since all columns are represented with numerical values, and some of just categories, these columns are converted back to categorical columns: SEX, MARRIAGE, and EDUCATION as objects.
 
-After clean up, the data has 22299 rows and 24 columns (originally all numerical and finally 21 numerical and 3 categorical). The data is highly imbalanced with 77.3% non-default and only 22.7% default cases as seen in below image. Since we aim to classify and find default customers, this imbalance data poses some difficulties, and the data needs to be handled with case.
+## EDA Insights:
+1. Data is highly imbalanced. We need to use appropriate measures like F1 or Recall instead of Accuracy. Imbalance data needs to be undersampled or oversampled so models like LogisticRegression do not eliminate the small class. SVC needs to have balance parameter.
+2. There are correlations between features. PAY_0 has increasing correlation gradually up tp PAY_6, as well as BILL_AMT1 up to BILL_AMT6.
+3. LIMIT_BAL column is right-skewed with outliers as seen in below picture, so it was trimmed to balances under $610,000.
+4. Age distribution is right-skewed, but the mean is similar for each group (outliers greater than 72 were removed).
 
-![Balance Distribution and Imbalance Data Labels](images/capstone_00.png)
+![Imbalance Data, Balance and Age Distributions](images/capstone_fin_01.png)
 
-The data also shows different scales among columns, and proper scaling techniques needs to be used so there are no issues with the models. For more details about scaling, please view the accompanied Jupyter notebook. Other than scaling, it is north worthy to mention that some of the columns are highly correlated to each other. Columns PAY_0 to PAY6 and BILL_AMT1 to BILL_AMT6 are gradually correlated among each other as seen in the correlation matrix in the notebook.
+6. Gender has an impact on the rate of defaults. Altough there are more women in the dataset, they have lower default rates than men.
+7. Maritial status also impacts default rates. Single people are less likely to default than married people.
 
-For encoding categorial columns, ***pd.get_dummies*** is used, and ***StandardScaler*** class is used to scale the other columns. The data has been split into training and test sets by a ratio of 70%/30% which is 15609 training rows and 6690 test rows. The ***Dummy Classifier*** returns 78% accuracy on this data so any model has to beat this value to be considered worthy.
+![Gender and Marital Status Distributions](images/capstone_fin_02.png)
+
+9. Education also impacts default rates. Post graduate degree holders are less likely to default than high school graduates and basic University degree holders.
+10. The data also shows different scales among columns, and proper scaling techniques needs to be used so there are no issues with the models. For more details about scaling, please view the accompanied Jupyter notebook. 
+
+![Education Level Distributions and Data Scale](images/capstone_fin_03.png)
+
+After clean up, the data has 22306 rows and 24 columns (originally all numerical and finally 21 numerical and 3 categorical). The data is highly imbalanced with 77.3% non-default and only 22.7% default cases as seen in below image. Since we aim to classify and find default customers, this imbalance data poses some difficulties, and the data needs to be handled with case.
+
+Other than scaling, it is note worthy to mention that some of the columns are highly correlated to each other. Columns PAY_0 to PAY6 and BILL_AMT1 to BILL_AMT6 are gradually correlated among each other as seen in the correlation matrix in the notebook. For encoding categorial columns, ***pd.get_dummies*** is used, and ***StandardScaler*** class is used to scale the other columns. The data has been split into training and test sets by a ratio of 70%/30% which is 15609 training rows and 6690 test rows. The ***Dummy Classifier*** returns 78% accuracy on this data so any model has to beat this value to be considered worthy.
 
 # Model Comparisons
 
