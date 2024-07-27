@@ -40,7 +40,7 @@ Other than scaling, it is note worthy to mention that some of the columns are hi
 
 # Model Comparisons
 
-During our EDA phase, we managed to create and compare 14 models: 5 Basic models, XGBoost Model, Nueral Network Model, 3 improved models, 1 GridSearchCV on XGBoost, 1 ROC on Logistic Regression, and 2 Ensemble models as seen in the table below. For reasons to be explained soon, ***XGBoost GridSearchCV***, ***Balanced Bagging***, and ***Improved SVC*** resulted in the best performances.
+In this project, we managed to create and compare 14 models: 5 Basic models, XGBoost Model, Nueral Network Model, 3 improved models, 1 GridSearchCV on XGBoost, 1 ROC on Logistic Regression, and 2 Ensemble models as seen in the table below. For reasons to be explained soon, ***XGBoost GridSearchCV***, ***Balanced Bagging***, and ***Improved SVC*** resulted in the best performances.
 
 ![Models Result](images/capfin_12.png)
 
