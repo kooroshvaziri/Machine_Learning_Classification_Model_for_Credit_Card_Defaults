@@ -3,7 +3,7 @@
 The purpose of this project is to detect credit card defaults with machine learning classifiers and build an efficient classifier to identify bank customers who would default next month. It is a binary classifier problem, and the data has taken from ["Default of Credit Card Clients Data Set"](https://code.datasciencedojo.com/datasciencedojo/datasets/tree/master/Default%20of%20Credit%20Card%20Clients) where itself comes from UC Irvine's [UCI Machine Learning Repo](https://archive.ics.uci.edu/dataset/350/default+of+credit+card+clients).
 
 # Jupyter Notebooks
-The accompanied Jupyter Notebooks provide the exploratory data analysis (EDA), calculations, methodologies, and different classifier models performance comparisons. The first iteration and EDA are within the [EDA Notebook](capstone.ipynb), and the follow up iterations and improvements are [Capstone Notebook](capstone_final.ipynb).
+The accompanied Jupyter Notebooks provide the exploratory data analysis (EDA), calculations, methodologies, and different classifier models performance comparisons. The first iteration and EDA are within the [EDA Notebook](capstone.ipynb), and the follow up iterations and improvements are presented in [Capstone Notebook](capstone_final.ipynb).
 
 # Exploratory Data Analysis and Data Cleaning
 This dataset is relatively clean with no missing values and no duplicates. There were originally 30,000 rows and 24 features (excluding ID) in the dataset. 
