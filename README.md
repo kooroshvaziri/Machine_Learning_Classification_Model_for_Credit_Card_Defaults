@@ -40,20 +40,26 @@ Other than scaling, it is note worthy to mention that some of the columns are hi
 
 # Model Comparisons
 
-During our EDA phase, we managed to create and compare 5 Basic models, 2 improved models, 1 GridSearchCV, 1 ROC, and 2 Ensemble models as seen in table below, but as for reasons to be explained soon, ***GridSearchCV*** and ***Easy Ensumble Classifier*** resulted in best performances.
+During our EDA phase, we managed to create and compare 5 Basic models, XGBoost, Nueral Network, 3 improved models, 1 GridSearchCV on XGBoost, 1 ROC on Logistic Regression, and 2 Ensemble models as seen in table below, but as for reasons to be explained soon, ***XGBoost GridSearchCV***, ***Balanced Bagging***, and ***Improved SVC*** resulted in best performances.
 
-![Models Result](images/capstone_02.png)
+![Models Result](images/capfin_12.png)
 
 # Result Analysis
 
-Although all basic models beat the ***Dummy Classifier*** performance, because of the imbalance dataset, we can see that ***Accuracy*** is not the right measure to compare their performances. These models all show poor ***Recall*** and ***Precision*** scores, so to compare the best model, we have to use either ***Recall*** or ***F-1*** scores. The reason for this, is that poor recall scores result in large number of false negative cases, meaning a large number of customers who are likely to be defaulted will be classified as not in default that can cause the bank quite amount of money.
+Although all basic models beat the ***Dummy Classifier*** performance, because of the imbalance dataset, we can see that ***Accuracy*** is not the right measure to compare their performances. These models all show poor ***Recall*** and ***Precision*** scores, so to compare the best model, we have to use either ***Recall*** or ***F-1*** scores. The reason for this is that poor recall scores result in a large number of ***false negative*** cases, meaning a large number of customers who are likely to be defaulted will be classified as safe resulting the bank to lose money.
 
 # Improved Models
-The improved models are based on ***Logistic Regression*** Coefficient importance or linear correlation (below image top-left) and ***Random Forrest*** non-linear correlations (below image bottom-side). These models are built based on a subset of original features albeit more important. ROC model is produced by changing the probability values for the false positive rate (below image on right-side).
+A plathora of hyper-parameter tuning and feature reduction techniques is used to create the improved models. The ***Improved XG-Boost*** Model is tuned with ***scale_pos_weight*** and some other important parameters, and finally a GridSearch Cross Validation is performed to find the best parameters.
 
-![Coefs, ROC, and MDI](images/capstone_06.png)
+Other improved models are based on the feedback from the coefficients of the ***Logistic Regression*** model (below image top-left) and ***Random Forrest*** non-linear correlations (below image bottom-side) to choose a subset of original features albeit more important ones. ROC is performed on a Logistic Regression modelby changing the probability values for the ***false positive*** rate (below image on right-side). ***Improved SVC*** is hyper-parameter tuned by balanced data and feature reduction. 
 
-We can see that GridSearchCV results in the best SVC model, but it takes a long time to converge. ***Improved SVC*** classifier actually has very good ***Recall*** score and training time there.
+![Coefs, ROC, and MDI](images/capfin_15.png)
+
+We can see that GridSearchCV results in one of the best model, but it takes a long time to converge. ***Improved SVC*** classifier actually has very good ***Recall*** score and of the best training time there.
+
+Lastly, although ***Improved Logistic Regression*** results in best ***Recall*** score, unfortunately the accuracy of that model is below the dummy classifier. Depend on the bank available processing resources, this model may actually be more useful since it has the lowest ***False Negative*** rate meaning more people likely to default are detected by the model. 
+
+
 
 # Ensemble Techniques
 Two ensemble classifiers are chosen for imbalanced data, ***Easy Ensemble*** and ***Balanced Bagging***. Both have performed nicely on this dataset with good recall score. 
